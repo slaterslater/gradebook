@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace GradeBook
 {
@@ -8,17 +7,21 @@ namespace GradeBook
   {
     static void Main(string[] args)
     {
-      var book = new Book();
+      var book = new Book("January 2020");
+      book.AddGrade(75.4);
+      book.AddGrade(80.2);
+      book.AddGrade(88.1);
+      book.AddGrade(79.9);
+      book.ShowAllStats();
 
-      List<double> grades = new List<double>() { 12.6454, 12.4767, 12.58787 };
+      // var avg = book.AverageGrade();
+      // var max = book.MaxGrade();
+      // var min = book.MinGrade();
 
-      var result = 0.0;
-      foreach (double number in grades)
-      {
-        result += number;
-      }
-      result /= grades.Count;
-      Console.WriteLine($"{result:N2}");
+      // Console.WriteLine($"average grade = {avg:N2}");
+      // Console.WriteLine($"top grade = {max:N2}");
+      // Console.WriteLine($"low grade = {min:N2}");
+    
     }
   }
 }
