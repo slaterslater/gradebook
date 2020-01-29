@@ -15,10 +15,12 @@ namespace GradeBook.Tests
           book.AddGrade(88.1);
 
           // act
-          var avg = book.AverageGrade();
+          var stats = book.GetStatistics();
           
           // assert
-          Assert.Equal("77.13", $"{avg:N2}");
+          Assert.Equal(77.1, stats.avg, 1);
+          Assert.Equal(88.1, stats.max, 1);
+          Assert.Equal(67.9, stats.min, 1);
         }
     }
 }

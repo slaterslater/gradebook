@@ -7,7 +7,7 @@ namespace GradeBook
   {
     private List<double> grades;
     private string name;
-
+    
     public Book(string name){
       this.name = name;
       grades = new List<double>();
@@ -18,37 +18,20 @@ namespace GradeBook
       grades.Add(grade);
     }
 
-    public double AverageGrade()
-    {
-      var result = 0.0;
-      foreach (double number in grades)
-      {
-        result += number;
-      }
-      result /= grades.Count;
-      return result;
+    public List<double> GetGrades(){
+      return grades;
     }
 
-    public double MaxGrade(){
-      var max = double.MinValue;
-      foreach (var number in grades)
-      {
-        max = Math.Max(number, max);
-      }
-      return max;
-    }
-    
-    public double MinGrade(){
-      var min = double.MaxValue;
-      foreach (var number in grades)
-      {
-        min = Math.Min(number, min);
-      }
-      return min;
+    public Statistics GetStatistics(){
+      return new Statistics(GetGrades());
     }
 
-    public void ShowAllStats(){
-      Console.WriteLine($"avg={AverageGrade()}\ntop={MaxGrade()}\nlow={MinGrade()}");
+    public void DisplayStats(){
+      var stats = GetStatistics();
+      Console.WriteLine($"Grades for {name}");
+      Console.WriteLine($"Top Grade: {stats.max}");
+      Console.WriteLine($"Low Grade: {stats.min}");
+      Console.WriteLine($"Average : {stats.avg}");
     }
 
   }
