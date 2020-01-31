@@ -13,6 +13,10 @@ namespace GradeBook
       grades = new List<double>();
     }
     
+    public void SetName(string name){
+      this.name = name;
+    }
+
     public void AddGrade(double grade)
     {
       grades.Add(grade);
@@ -20,6 +24,10 @@ namespace GradeBook
 
     public List<double> GetGrades(){
       return grades;
+    }
+
+    public string GetName(){
+      return name;
     }
 
     public Statistics GetStatistics(){
