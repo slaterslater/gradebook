@@ -7,39 +7,58 @@ namespace GradeBook
   {
     private List<double> grades;
     private string name;
-    
-    public Book(string name){
+
+    public Book(string name)
+    {
       this.name = name;
       grades = new List<double>();
     }
-    
-    public void SetName(string name){
+
+    public void SetName(string name)
+    {
       this.name = name;
+    }
+
+    public int GetSize()
+    {
+      return grades.Count;
     }
 
     public void AddGrade(double grade)
     {
-      grades.Add(grade);
+      if (grade >= 0 && grade <= 100)
+      {
+        grades.Add(grade);
+      }
+      else
+      {
+        Console.WriteLine("Cannot add grade: Invalid Value");
+      }
     }
 
-    public List<double> GetGrades(){
+    public List<double> GetGrades()
+    {
       return grades;
     }
 
-    public string GetName(){
+    public string GetName()
+    {
       return name;
     }
 
-    public Statistics GetStatistics(){
+    public Statistics GetStatistics()
+    {
       return new Statistics(GetGrades());
     }
 
-    public void DisplayStats(){
+    public void DisplayStats()
+    {
       var stats = GetStatistics();
       Console.WriteLine($"Grades for {name}");
       Console.WriteLine($"Top Grade: {stats.max}");
       Console.WriteLine($"Low Grade: {stats.min}");
-      Console.WriteLine($"Average : {stats.avg}");
+      Console.WriteLine($"Average : {stats.avg:N1}");
+      Console.WriteLine($"Letter : {stats.letter}");
     }
 
   }

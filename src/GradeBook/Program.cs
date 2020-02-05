@@ -7,11 +7,18 @@ namespace GradeBook
   {
     static void Main(string[] args)
     {
-      var book = new Book("January 2020");
-      book.AddGrade(75.4);
-      book.AddGrade(80.2);
-      book.AddGrade(88.1);
-      book.AddGrade(79.9);
+      var book = new Book("February 2020");
+      var input = "";
+      Console.WriteLine("Enter grades or Q to exit");
+      do{
+        input = Console.ReadLine();
+        double grade;
+        if(double.TryParse(input, out grade))
+          book.AddGrade(grade);
+      } while (!String.Equals("Q",input.ToUpper()));
+      
+      
+
       book.DisplayStats();
     }
   }

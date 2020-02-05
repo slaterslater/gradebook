@@ -6,6 +6,17 @@ namespace GradeBook.Tests
     public class BookTests
     {
         [Fact]
+        public void BookRejectsInvalidGrades(){
+          var book1 = new Book("");
+          book1.AddGrade(50);
+          book1.AddGrade(102.1);
+          book1.AddGrade(-2.8);
+          book1.AddGrade(99);
+
+          Assert.Equal(2,book1.GetSize());
+        }
+        
+        [Fact]
         public void BookCalculatesStats()
         {
           // arrage
@@ -21,6 +32,7 @@ namespace GradeBook.Tests
           Assert.Equal(77.1, stats.avg, 1);
           Assert.Equal(88.1, stats.max, 1);
           Assert.Equal(67.9, stats.min, 1);
+          Assert.Equal("B+", stats.letter);
         }
     }
 }
