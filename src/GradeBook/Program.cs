@@ -12,13 +12,14 @@ namespace GradeBook
       Console.WriteLine("Enter grades or Q to exit");
       do{
         input = Console.ReadLine();
+        double grade;
        try {
-          var grade = double.Parse(input);
-          book.AddGrade(grade);
+          if(double.TryParse(input, out grade))
+            book.AddGrade(grade);
+          else 
+            book.AddGrade(input);
         } catch (ArgumentException err){
-          Console.WriteLine(err.Message);
-        } catch(FormatException){
-          Console.WriteLine("Not a number");
+            Console.WriteLine(err.Message);
         }
       } while (!String.Equals("Q",input.ToUpper()));
       book.DisplayStats();
