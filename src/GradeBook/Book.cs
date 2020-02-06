@@ -27,13 +27,9 @@ namespace GradeBook
     public void AddGrade(double grade)
     {
       if (grade >= 0 && grade <= 100)
-      {
         grades.Add(grade);
-      }
       else
-      {
-        Console.WriteLine("Cannot add grade: Invalid Value");
-      }
+        throw new ArgumentException("Invalid grade");
     }
 
     public List<double> GetGrades()
