@@ -6601,11 +6601,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\258976\\Documents\\github\\gradebook\\test\\GradeBook.Tests\\GradeBook.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\258976\\documents\\github\\gradebook\\test\\GradeBook.Tests\\GradeBook.Tests.csproj",
       "projectName": "GradeBook.Tests",
-      "projectPath": "C:\\Users\\258976\\Documents\\github\\gradebook\\test\\GradeBook.Tests\\GradeBook.Tests.csproj",
+      "projectPath": "C:\\Users\\258976\\documents\\github\\gradebook\\test\\GradeBook.Tests\\GradeBook.Tests.csproj",
       "packagesPath": "C:\\Users\\258976\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\258976\\Documents\\github\\gradebook\\test\\GradeBook.Tests\\obj\\",
+      "outputPath": "C:\\Users\\258976\\documents\\github\\gradebook\\test\\GradeBook.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\258976\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6619,8 +6619,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\258976\\Documents\\github\\gradebook\\src\\GradeBook\\GradeBook.csproj": {
-              "projectPath": "C:\\Users\\258976\\Documents\\github\\gradebook\\src\\GradeBook\\GradeBook.csproj"
+            "C:\\Users\\258976\\documents\\github\\gradebook\\src\\GradeBook\\GradeBook.csproj": {
+              "projectPath": "C:\\Users\\258976\\documents\\github\\gradebook\\src\\GradeBook\\GradeBook.csproj"
             }
           }
         }

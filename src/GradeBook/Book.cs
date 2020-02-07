@@ -10,13 +10,24 @@ namespace GradeBook
 
     public Book(string name)
     {
-      this.name = name;
+      if (!String.IsNullOrEmpty(name))
+        this.name = name;
+      else 
+        this.name = "untitled gradebook";
       grades = new List<double>();
+    }
+
+    public string GetName()
+    {
+      return name;
     }
 
     public void SetName(string name)
     {
-      this.name = name;
+      if (!String.IsNullOrEmpty(name))
+        this.name = name;
+      else 
+        throw new ArgumentException("No name provided");  
     }
 
     public int GetSize()
@@ -71,11 +82,6 @@ namespace GradeBook
       return grades;
     }
 
-    public string GetName()
-    {
-      return name;
-    }
-
     public Statistics GetStatistics()
     {
       return new Statistics(GetGrades());
@@ -83,12 +89,16 @@ namespace GradeBook
 
     public void DisplayStats()
     {
-      var stats = GetStatistics();
-      Console.WriteLine($"Grades for {name}");
-      Console.WriteLine($"Top Grade: {stats.max}");
-      Console.WriteLine($"Low Grade: {stats.min}");
-      Console.WriteLine($"Average : {stats.avg:N1}");
-      Console.WriteLine($"Letter : {stats.letter}");
+      if(grades.Count == 0){
+        Console.WriteLine($"No grades entered for {name}");
+      } else {
+        var stats = GetStatistics();
+        Console.WriteLine($"Grades for {name}");
+        Console.WriteLine($"Top Grade: {stats.max}");
+        Console.WriteLine($"Low Grade: {stats.min}");
+        Console.WriteLine($"Average : {stats.avg:N1}");
+        Console.WriteLine($"Letter : {stats.letter}");
+      }
     }
 
   }
