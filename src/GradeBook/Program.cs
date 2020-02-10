@@ -8,11 +8,16 @@ namespace GradeBook
     static void Main(string[] args)
     {
       Console.Write("Enter gradebook name: ");
-      string input = Console.ReadLine();
-      var book = new Book(input);
-      int count = 0;   
+      var book = new Book(Console.ReadLine());
+      EnterGrades(book);       
+      book.DisplayStats();
+    } // Main
+
+    static void EnterGrades(Book book){
       string instr = "Enter grades or Q to exit";
       Console.WriteLine(instr);
+      string input;
+      int count = 0; 
       while (true) {
         Console.Write($"{++count}: ");
         input = Console.ReadLine();
@@ -34,7 +39,6 @@ namespace GradeBook
           }
         }
       }
-      book.DisplayStats();
-    }
+    } // EnterGrades
   }
 }
