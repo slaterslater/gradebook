@@ -94,10 +94,10 @@ namespace GradeBook
       } else {
         var stats = GetStatistics();
         Console.WriteLine($"Grades for {name}");
-        Console.WriteLine($"Top Grade: {stats.max}");
-        Console.WriteLine($"Low Grade: {stats.min}");
-        Console.WriteLine($"Average : {stats.avg:N1}");
-        Console.WriteLine($"Letter : {stats.letter}");
+        Console.WriteLine($" Top: {stats.max}");
+        Console.WriteLine($" Low: {stats.min}");
+        Console.WriteLine($" Avg: {stats.avg:N1}, {stats.letter}");
+        Console.WriteLine($" GPA: {stats.gpa}");
       }
     }
 
